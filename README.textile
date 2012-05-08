@@ -28,6 +28,12 @@ h2. How to build
 Download and install "sbt":https://github.com/harrah/xsbt, then run:
 <pre>$ sbt package</pre>
 
+Cross build ( Scala 2.9.1 and 2.9.2 ) with:
+<pre>$ sbt + package</pre>
+
+Publish to the local maven repo:
+<pre>$ sbt + publish</pre>
+
 h2. Project Status
 
 master: Cassandra 1.1.x
