@@ -6,6 +6,8 @@ organization := "com.shorrockin"
 
 scalaVersion := "2.9.2"
 
+crossScalaVersions := Seq("2.9.1", "2.9.2")
+
 compileOrder := CompileOrder.JavaThenScala
 
 libraryDependencies ++= Seq(
@@ -20,7 +22,7 @@ libraryDependencies ++= Seq(
 libraryDependencies += "com.novocode" % "junit-interface" % "0.7" % "test->default"
 
 publishTo <<= (version) { version: String =>
-      Some(Resolver.file("file", new File("/home/shimi/workspace/shimi-mvn-repo/") / {
+      Some(Resolver.file("file", new File(Path.userHome.absolutePath+"/.m2/repository") / {
         if  (version.trim.endsWith("SNAPSHOT"))  "snapshots"
         else                                     "releases/" }    ))
 }
